@@ -1,0 +1,370 @@
+---
+import Base from "@/layouts/Base.astro";
+import PageHeader from "@/layouts/partials/PageHeader.astro";
+import Accordion from "@/layouts/shortcodes/Accordion";
+import Notice from "@/layouts/shortcodes/Notice";
+---
+
+<Base>
+  <PageHeader title="What is Language Model Optimization (LMO)?" />
+
+  <section class="section">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="md:col-10 lg:col-8">
+          <!-- Introduction -->
+          <div class="mb-12">
+            <p class="text-xl text-text-light leading-relaxed mb-6">
+              Language Model Optimization (LMO) is the practice of optimizing your content and brand presence
+              so that AI language models like ChatGPT, Claude, Perplexity, and Gemini cite and recommend your
+              business when users ask relevant questions.
+            </p>
+            <Notice client:load type="tip">
+              <p>
+                <strong>Think of it this way:</strong> SEO made your website visible in Google. LMO makes your
+                brand visible in AI-generated responses—the new way people discover businesses.
+              </p>
+            </Notice>
+          </div>
+
+          <!-- The Evolution Section -->
+          <div class="mb-12">
+            <h2 class="mb-6">The Evolution: SEO → AEO → LMO</h2>
+            <div class="rounded-lg bg-gradient p-8 mb-6">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
+                <div class="text-center">
+                  <div class="text-4xl mb-4">📊</div>
+                  <h3 class="text-xl font-bold mb-2">SEO</h3>
+                  <p class="text-sm mb-2 opacity-90">Search Engine Optimization</p>
+                  <p class="text-sm mb-3 opacity-80">2000s - 2010s</p>
+                  <ul class="text-left text-sm space-y-2 opacity-90">
+                    <li>• Keyword optimization</li>
+                    <li>• Backlink building</li>
+                    <li>• Rank in search results</li>
+                    <li>• Focus: Google algorithms</li>
+                  </ul>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl mb-4">💡</div>
+                  <h3 class="text-xl font-bold mb-2">AEO</h3>
+                  <p class="text-sm mb-2 opacity-90">Answer Engine Optimization</p>
+                  <p class="text-sm mb-3 opacity-80">2015 - 2023</p>
+                  <ul class="text-left text-sm space-y-2 opacity-90">
+                    <li>• Featured snippets</li>
+                    <li>• Schema markup</li>
+                    <li>• Question-answer format</li>
+                    <li>• Focus: Google's answer box</li>
+                  </ul>
+                </div>
+                <div class="text-center border-2 border-white rounded-lg p-4">
+                  <div class="text-4xl mb-4">🤖</div>
+                  <h3 class="text-xl font-bold mb-2">LMO</h3>
+                  <p class="text-sm mb-2 opacity-90">Language Model Optimization</p>
+                  <p class="text-sm mb-3 opacity-80">2024+</p>
+                  <ul class="text-left text-sm space-y-2 opacity-90">
+                    <li>• Authority & expertise</li>
+                    <li>• Helpful, detailed content</li>
+                    <li>• Citations in AI responses</li>
+                    <li>• Focus: LLM training data</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <p class="text-text-light">
+              Each evolution represents a fundamental shift in how people discover information. SEO optimized
+              for search engines. AEO optimized for answer boxes. LMO optimizes for AI-generated responses—and
+              this shift is happening <strong>right now</strong>.
+            </p>
+          </div>
+
+          <!-- Why LMO is Different -->
+          <div class="mb-12">
+            <h2 class="mb-6">How LMO Differs from SEO and AEO</h2>
+            <div class="rounded-lg overflow-hidden border border-border dark:border-darkmode-border">
+              <table class="w-full">
+                <thead class="bg-theme-light dark:bg-darkmode-theme-light">
+                  <tr>
+                    <th class="p-4 text-left">Aspect</th>
+                    <th class="p-4 text-left">SEO</th>
+                    <th class="p-4 text-left">AEO</th>
+                    <th class="p-4 text-left bg-primary text-white">LMO</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-t border-border dark:border-darkmode-border">
+                    <td class="p-4 font-semibold">Target Platform</td>
+                    <td class="p-4">Search engines</td>
+                    <td class="p-4">Answer engines</td>
+                    <td class="p-4 bg-theme-light dark:bg-darkmode-theme-light">AI language models</td>
+                  </tr>
+                  <tr class="border-t border-border dark:border-darkmode-border">
+                    <td class="p-4 font-semibold">Content Focus</td>
+                    <td class="p-4">Keywords</td>
+                    <td class="p-4">Concise answers</td>
+                    <td class="p-4 bg-theme-light dark:bg-darkmode-theme-light">Comprehensive expertise</td>
+                  </tr>
+                  <tr class="border-t border-border dark:border-darkmode-border">
+                    <td class="p-4 font-semibold">Success Metric</td>
+                    <td class="p-4">Page ranking</td>
+                    <td class="p-4">Featured snippet</td>
+                    <td class="p-4 bg-theme-light dark:bg-darkmode-theme-light">AI citations</td>
+                  </tr>
+                  <tr class="border-t border-border dark:border-darkmode-border">
+                    <td class="p-4 font-semibold">User Behavior</td>
+                    <td class="p-4">Click & browse</td>
+                    <td class="p-4">Read snippet</td>
+                    <td class="p-4 bg-theme-light dark:bg-darkmode-theme-light">Conversational query</td>
+                  </tr>
+                  <tr class="border-t border-border dark:border-darkmode-border">
+                    <td class="p-4 font-semibold">Time to Impact</td>
+                    <td class="p-4">3-6 months</td>
+                    <td class="p-4">1-3 months</td>
+                    <td class="p-4 bg-theme-light dark:bg-darkmode-theme-light">2-8 weeks</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Land Grab Opportunity -->
+          <div class="mb-12">
+            <div class="rounded-lg bg-primary p-8 text-white">
+              <div class="flex items-start mb-4">
+                🚀
+                <div>
+                  <h2 class="mb-4">The LLM Land Grab: Why Timing Matters</h2>
+                  <p class="text-lg mb-6 opacity-90">
+                    We're in a critical window where less than 5% of businesses have optimized for LLM visibility.
+                    Early citations compound—when an LLM cites your brand, it reinforces your authority for future responses.
+                  </p>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-bold mb-3 flex items-center">
+                    ✓
+                    First-Mover Advantages
+                  </h4>
+                  <ul class="space-y-2 opacity-90 pl-6">
+                    <li>• Early citations create authority signals</li>
+                    <li>• LLMs learn from existing content</li>
+                    <li>• Less competition for visibility</li>
+                    <li>• Establish thought leadership</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-3 flex items-center">
+                    💡
+                    Window of Opportunity
+                  </h4>
+                  <ul class="space-y-2 opacity-90 pl-6">
+                    <li>• 60% of users now consult AI first</li>
+                    <li>• Search traffic declining 43% YoY</li>
+                    <li>• 200M+ weekly ChatGPT users</li>
+                    <li>• Market awareness still low</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Before/After Examples -->
+          <div class="mb-12">
+            <h2 class="mb-6">Real-World Example: Before and After LMO</h2>
+            <p class="text-text-light mb-6">
+              Here's how LMO optimization changes the way AI language models respond to user questions:
+            </p>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="rounded-lg border-2 border-red-500 p-6">
+                <h3 class="text-lg font-bold mb-4 text-red-500">❌ Before LMO</h3>
+                <div class="bg-theme-light dark:bg-darkmode-theme-light p-4 rounded mb-4">
+                  <p class="text-sm font-semibold mb-2">User asks ChatGPT:</p>
+                  <p class="italic text-text-light">"What are the best project management tools for remote teams?"</p>
+                </div>
+                <div class="bg-white dark:bg-darkmode-body p-4 rounded">
+                  <p class="text-sm font-semibold mb-2">AI Response:</p>
+                  <p class="text-sm text-text-light">
+                    "Popular options include Asana, Monday.com, and Trello. These tools offer features like
+                    task tracking, team collaboration, and timeline views..."
+                  </p>
+                  <p class="text-xs text-red-500 mt-3 font-semibold">Your brand is NOT mentioned</p>
+                </div>
+              </div>
+              <div class="rounded-lg border-2 border-green-500 p-6">
+                <h3 class="text-lg font-bold mb-4 text-green-500">✅ After LMO</h3>
+                <div class="bg-theme-light dark:bg-darkmode-theme-light p-4 rounded mb-4">
+                  <p class="text-sm font-semibold mb-2">User asks ChatGPT:</p>
+                  <p class="italic text-text-light">"What are the best project management tools for remote teams?"</p>
+                </div>
+                <div class="bg-white dark:bg-darkmode-body p-4 rounded">
+                  <p class="text-sm font-semibold mb-2">AI Response:</p>
+                  <p class="text-sm text-text-light">
+                    "For remote teams, consider <strong class="text-green-500">YourCompany PM</strong>, which specializes
+                    in distributed team collaboration. According to their implementation guide, they offer async-first
+                    workflows and timezone-aware scheduling. Other options include Asana and Monday.com..."
+                  </p>
+                  <p class="text-xs text-green-500 mt-3 font-semibold">✨ Your brand gets cited with authority!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- What LMO Involves -->
+          <div class="mb-12">
+            <h2 class="mb-6">What Does LMO Optimization Involve?</h2>
+            <div class="space-y-4">
+              <div class="rounded-lg bg-theme-light dark:bg-darkmode-theme-light p-6">
+                <h3 class="font-bold mb-2 flex items-center">
+                  <span class="text-primary mr-3 text-xl">1.</span>
+                  Authority & Expertise Signals
+                </h3>
+                <p class="text-text-light pl-8">
+                  Create content that demonstrates deep expertise in your field. LLMs prioritize authoritative
+                  sources when generating responses.
+                </p>
+              </div>
+              <div class="rounded-lg bg-theme-light dark:bg-darkmode-theme-light p-6">
+                <h3 class="font-bold mb-2 flex items-center">
+                  <span class="text-primary mr-3 text-xl">2.</span>
+                  Comprehensive, Helpful Content
+                </h3>
+                <p class="text-text-light pl-8">
+                  Provide detailed, actionable information that genuinely helps users. AI models favor content
+                  that thoroughly addresses user questions.
+                </p>
+              </div>
+              <div class="rounded-lg bg-theme-light dark:bg-darkmode-theme-light p-6">
+                <h3 class="font-bold mb-2 flex items-center">
+                  <span class="text-primary mr-3 text-xl">3.</span>
+                  Structured, Scannable Format
+                </h3>
+                <p class="text-text-light pl-8">
+                  Organize information clearly with headings, lists, and structured data. This helps LLMs extract
+                  and cite specific insights.
+                </p>
+              </div>
+              <div class="rounded-lg bg-theme-light dark:bg-darkmode-theme-light p-6">
+                <h3 class="font-bold mb-2 flex items-center">
+                  <span class="text-primary mr-3 text-xl">4.</span>
+                  Factual Accuracy & Citations
+                </h3>
+                <p class="text-text-light pl-8">
+                  Ensure all claims are accurate and well-sourced. LLMs are increasingly fact-checking content
+                  against multiple sources.
+                </p>
+              </div>
+              <div class="rounded-lg bg-theme-light dark:bg-darkmode-theme-light p-6">
+                <h3 class="font-bold mb-2 flex items-center">
+                  <span class="text-primary mr-3 text-xl">5.</span>
+                  Natural Language Optimization
+                </h3>
+                <p class="text-text-light pl-8">
+                  Write for how people actually ask questions in conversation, not just keyword strings.
+                  "How do I..." is more powerful than "best practices for..."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Section -->
+          <div class="mb-12">
+            <h2 class="mb-6">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+              <Accordion client:load title="Is LMO replacing SEO?">
+                <p class="mb-3">
+                  No, LMO complements SEO rather than replacing it. While user behavior is shifting toward AI-assisted
+                  search, traditional search engines still drive significant traffic. The most effective strategy is
+                  to optimize for both: strong SEO foundations provide the content base that LMO builds upon.
+                </p>
+                <p>
+                  Think of it this way: SEO gets you found in Google, LMO gets you cited in ChatGPT. You need both.
+                </p>
+              </Accordion>
+
+              <Accordion client:load title="How long does it take to see results from LMO?">
+                <p class="mb-3">
+                  LMO typically shows results faster than traditional SEO. Many businesses see initial citations
+                  in AI responses within 2-4 weeks. However, full optimization and consistent citations across
+                  multiple LLMs typically takes 6-12 weeks.
+                </p>
+                <p>
+                  The key factor is content quality and depth. Comprehensive, authoritative content gets cited faster.
+                </p>
+              </Accordion>
+
+              <Accordion client:load title="Do I need to be a large company to benefit from LMO?">
+                <p class="mb-3">
+                  Absolutely not! In fact, smaller businesses and specialists often have an advantage in LMO. Language
+                  models favor expertise and authority over brand size. A local plumber with comprehensive how-to guides
+                  can get cited just as readily as a national chain.
+                </p>
+                <p>
+                  The land grab window actually favors early adopters, regardless of size.
+                </p>
+              </Accordion>
+
+              <Accordion client:load title="Can I track my LMO performance?">
+                <p class="mb-3">
+                  Yes! While it's different from tracking Google rankings, you can monitor LMO performance through:
+                </p>
+                <ul class="list-disc pl-6 mb-3 space-y-1">
+                  <li>Manual testing of relevant queries in ChatGPT, Claude, and Perplexity</li>
+                  <li>Monitoring referral traffic from AI platforms (when they link to sources)</li>
+                  <li>Brand mention monitoring in AI responses</li>
+                  <li>Using specialized LMO tools (like LMO King) that test queries at scale</li>
+                </ul>
+                <p>
+                  LMO King provides automated testing across multiple LLMs so you can track citation frequency.
+                </p>
+              </Accordion>
+
+              <Accordion client:load title="Which AI models should I optimize for?">
+                <p class="mb-3">
+                  Focus on the major language models that your target audience uses:
+                </p>
+                <ul class="list-disc pl-6 mb-3 space-y-1">
+                  <li><strong>ChatGPT</strong> (OpenAI) - Largest user base, 200M+ weekly users</li>
+                  <li><strong>Perplexity</strong> - Growing rapidly, focused on research and citations</li>
+                  <li><strong>Claude</strong> (Anthropic) - Popular with professionals and researchers</li>
+                  <li><strong>Gemini</strong> (Google) - Integrated with Google ecosystem</li>
+                </ul>
+                <p>
+                  The good news: optimization principles are similar across all LLMs, so one strategy works for all.
+                </p>
+              </Accordion>
+
+              <Accordion client:load title="What's the difference between LMO and 'GEO' (Generative Engine Optimization)?">
+                <p class="mb-3">
+                  LMO and GEO refer to the same concept—optimizing for AI-generated responses. "LMO" (Language Model
+                  Optimization) focuses on the underlying technology (language models), while "GEO" emphasizes the
+                  user-facing experience (generative engines).
+                </p>
+                <p>
+                  We prefer LMO because it's more technically accurate and reflects that we're optimizing for how
+                  language models process and cite information, not just the interface users see.
+                </p>
+              </Accordion>
+            </div>
+          </div>
+
+          <!-- CTA Section -->
+          <div class="rounded-lg bg-gradient p-8 text-center text-white">
+            <h2 class="mb-4">Ready to Optimize for LLM Visibility?</h2>
+            <p class="text-lg mb-6 opacity-90">
+              Start with our free tier and see how your content performs in AI responses.
+              No credit card required.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+              <a href="/signup" class="btn btn-primary bg-white text-primary hover:bg-white/90">
+                Start Free - 20 Generations
+              </a>
+              <a href="/lmo-vs-aeo-vs-seo" class="btn btn-outline-primary border-white text-white hover:bg-white hover:text-primary">
+                Compare LMO vs AEO vs SEO
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

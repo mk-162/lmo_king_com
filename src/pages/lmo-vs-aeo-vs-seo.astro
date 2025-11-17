@@ -1,0 +1,503 @@
+---
+import Base from "@/layouts/Base.astro";
+import PageHeader from "@/layouts/partials/PageHeader.astro";
+
+import Notice from "@/layouts/shortcodes/Notice";
+import Tabs from "@/layouts/shortcodes/Tabs";
+import Tab from "@/layouts/shortcodes/Tab";
+
+// Schema markup for better AI understanding
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ComparisonTable",
+  "name": "LMO vs AEO vs SEO Comparison",
+  "description": "Comprehensive comparison of Language Model Optimization (LMO), Answer Engine Optimization (AEO), and Search Engine Optimization (SEO)",
+  "datePublished": "2024-01-01",
+  "dateModified": new Date().toISOString().split('T')[0],
+  "author": {
+    "@type": "Organization",
+    "name": "LMO King"
+  }
+};
+---
+
+<Base>
+  <!-- Schema Markup -->
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <PageHeader title="LMO vs AEO vs SEO: Complete Comparison Guide" />
+
+  <section class="section">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="md:col-10">
+          <!-- Introduction -->
+          <div class="mb-12 text-center">
+            <p class="text-xl text-text-light leading-relaxed mb-6">
+              SEO, AEO, and LMO aren't competing strategies—they're complementary approaches for different discovery channels.
+              Here's everything you need to know to decide where to invest your resources.
+            </p>
+            <Notice client:load type="info">
+              <p>
+                <strong>TL;DR:</strong> Use all three! SEO for Google, AEO for featured snippets, and LMO for AI citations.
+                But if you're prioritizing, LMO offers the biggest opportunity right now due to the land grab window.
+              </p>
+            </Notice>
+          </div>
+
+          <!-- Main Comparison Table -->
+          <div class="mb-12">
+            <h2 class="mb-6 text-center">Side-by-Side Comparison</h2>
+            <div class="overflow-x-auto">
+              <table class="w-full border-collapse">
+                <thead>
+                  <tr class="bg-gradient text-white">
+                    <th class="p-4 text-left border border-white/20">Feature</th>
+                    <th class="p-4 text-left border border-white/20">SEO</th>
+                    <th class="p-4 text-left border border-white/20">AEO</th>
+                    <th class="p-4 text-left border border-white/20 bg-primary">LMO</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white dark:bg-darkmode-body">
+                  <tr class="border-t border-border dark:border-darkmode-border">
+                    <td class="p-4 font-semibold">Primary Target</td>
+                    <td class="p-4">Search engines (Google, Bing)</td>
+                    <td class="p-4">Answer boxes & featured snippets</td>
+                    <td class="p-4 bg-theme-light dark:bg-darkmode-theme-light">AI language models (ChatGPT, Claude, Perplexity)</td>
+                  </tr>
+                  <tr class="border-t border-border dark:border-darkmode-border">
+                    <td class="p-4 font-semibold">User Behavior</td>
+                    <td class="p-4">Users click through search results</td>
+                    <td class="p-4">Users read snippet without clicking</td>
+                    <td class="p-4 bg-theme-light dark:bg-darkmode-theme-light">Users ask conversational questions</td>
+                  </tr>
+                  <tr class="border-t border-border dark:border-darkmode-border">
+                    <td class="p-4 font-semibold">Content Focus</td>
+                    <td class="p-4">Keyword-optimized pages</td>
+                    <td class="p-4">Concise, structured answers</td>
+                    <td class="p-4 bg-theme-light dark:bg-darkmode-theme-light">Comprehensive, authoritative content</td>
+                  </tr>
+                  <tr class="border-t border-border dark:border-darkmode-border">
+                    <td class="p-4 font-semibold">Success Metric</td>
+                    <td class="p-4">Page ranking (1-10, 11-20, etc.)</td>
+                    <td class="p-4">Featured snippet position</td>
+                    <td class="p-4 bg-theme-light dark:bg-darkmode-theme-light">Citation frequency in AI responses</td>
+                  </tr>
+                  <tr class="border-t border-border dark:border-darkmode-border">
+                    <td class="p-4 font-semibold">Time to Results</td>
+                    <td class="p-4">3-6 months (sometimes longer)</td>
+                    <td class="p-4">1-3 months</td>
+                    <td class="p-4 bg-theme-light dark:bg-darkmode-theme-light">2-8 weeks</td>
+                  </tr>
+                  <tr class="border-t border-border dark:border-darkmode-border">
+                    <td class="p-4 font-semibold">Competitive Landscape</td>
+                    <td class="p-4">Extremely saturated</td>
+                    <td class="p-4">Moderately competitive</td>
+                    <td class="p-4 bg-theme-light dark:bg-darkmode-theme-light">Early adoption phase (&lt;5% optimized)</td>
+                  </tr>
+                  <tr class="border-t border-border dark:border-darkmode-border">
+                    <td class="p-4 font-semibold">Technical Requirements</td>
+                    <td class="p-4">On-page SEO, backlinks, site speed</td>
+                    <td class="p-4">Schema markup, structured data</td>
+                    <td class="p-4 bg-theme-light dark:bg-darkmode-theme-light">Authority signals, factual accuracy, expertise</td>
+                  </tr>
+                  <tr class="border-t border-border dark:border-darkmode-border">
+                    <td class="p-4 font-semibold">Longevity of Results</td>
+                    <td class="p-4">Stable with maintenance</td>
+                    <td class="p-4">Moderate (snippets can change)</td>
+                    <td class="p-4 bg-theme-light dark:bg-darkmode-theme-light">Compounding (citations reinforce authority)</td>
+                  </tr>
+                  <tr class="border-t border-border dark:border-darkmode-border">
+                    <td class="p-4 font-semibold">Cost to Implement</td>
+                    <td class="p-4">Medium-High (ongoing link building)</td>
+                    <td class="p-4">Low-Medium (content optimization)</td>
+                    <td class="p-4 bg-theme-light dark:bg-darkmode-theme-light">Low-Medium (content enhancement)</td>
+                  </tr>
+                  <tr class="border-t border-border dark:border-darkmode-border">
+                    <td class="p-4 font-semibold">ROI Potential (2024-2025)</td>
+                    <td class="p-4">Moderate (declining traffic)</td>
+                    <td class="p-4">Medium (stable)</td>
+                    <td class="p-4 bg-theme-light dark:bg-darkmode-theme-light">High (growing market, low competition)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- When to Use Each -->
+          <div class="mb-12">
+            <h2 class="mb-6 text-center">When to Use Each Approach</h2>
+            <Tabs client:load>
+              <Tab name="Use SEO When...">
+                <div class="py-4">
+                  <h3 class="mb-4 font-bold">SEO is essential for:</h3>
+                  <ul class="space-y-3">
+                    <li class="flex items-start">
+                      ✓
+                      <div>
+                        <strong>E-commerce and transactional searches:</strong> When users are ready to buy,
+                        they still use Google Product Search
+                      </div>
+                    </li>
+                    <li class="flex items-start">
+                      ✓
+                      <div>
+                        <strong>Local businesses:</strong> Google Maps and local search remain dominant for
+                        "near me" queries
+                      </div>
+                    </li>
+                    <li class="flex items-start">
+                      ✓
+                      <div>
+                        <strong>Building foundational authority:</strong> Domain authority and backlinks still
+                        matter for overall credibility
+                      </div>
+                    </li>
+                    <li class="flex items-start">
+                      ✓
+                      <div>
+                        <strong>Long-term organic traffic:</strong> While declining, search still drives
+                        significant traffic for established sites
+                      </div>
+                    </li>
+                  </ul>
+                  <p class="mt-4 text-text-light">
+                    <strong>Don't abandon SEO—</strong>it's still valuable, especially for transactional queries
+                    and local search.
+                  </p>
+                </div>
+              </Tab>
+
+              <Tab name="Use AEO When...">
+                <div class="py-4">
+                  <h3 class="mb-4 font-bold">AEO is most effective for:</h3>
+                  <ul class="space-y-3">
+                    <li class="flex items-start">
+                      ✓
+                      <div>
+                        <strong>Direct answer queries:</strong> "How to...", "What is...", "Best way to..."
+                        questions that have clear answers
+                      </div>
+                    </li>
+                    <li class="flex items-start">
+                      ✓
+                      <div>
+                        <strong>Featured snippet opportunities:</strong> When Google shows answer boxes for
+                        your target keywords
+                      </div>
+                    </li>
+                    <li class="flex items-start">
+                      ✓
+                      <div>
+                        <strong>FAQ content:</strong> Common questions where concise answers provide immediate value
+                      </div>
+                    </li>
+                    <li class="flex items-start">
+                      ✓
+                      <div>
+                        <strong>Voice search optimization:</strong> Alexa, Siri, and Google Assistant often pull
+                        from featured snippets
+                      </div>
+                    </li>
+                  </ul>
+                  <p class="mt-4 text-text-light">
+                    <strong>AEO complements both SEO and LMO</strong>—structured, concise answers work well
+                    across all channels.
+                  </p>
+                </div>
+              </Tab>
+
+              <Tab name="Use LMO When...">
+                <div class="py-4">
+                  <h3 class="mb-4 font-bold">LMO delivers the most value for:</h3>
+                  <ul class="space-y-3">
+                    <li class="flex items-start">
+                      ✓
+                      <div>
+                        <strong>B2B and professional services:</strong> Complex buying decisions where users
+                        research extensively before contacting vendors
+                      </div>
+                    </li>
+                    <li class="flex items-start">
+                      ✓
+                      <div>
+                        <strong>Thought leadership positioning:</strong> Establishing your brand as the authority
+                        AI models cite
+                      </div>
+                    </li>
+                    <li class="flex items-start">
+                      ✓
+                      <div>
+                        <strong>Educational content marketing:</strong> In-depth guides, comparisons, and
+                        explainers that demonstrate expertise
+                      </div>
+                    </li>
+                    <li class="flex items-start">
+                      ✓
+                      <div>
+                        <strong>Early adoption advantage:</strong> Less than 5% of businesses are optimizing—
+                        first movers capture authority
+                      </div>
+                    </li>
+                    <li class="flex items-start">
+                      ✓
+                      <div>
+                        <strong>Future-proofing visibility:</strong> As AI adoption grows, LMO becomes increasingly
+                        critical
+                      </div>
+                    </li>
+                  </ul>
+                  <p class="mt-4 text-text-light">
+                    <strong>LMO is the highest-ROI opportunity right now</strong> due to low competition and
+                    rapid user adoption of AI tools.
+                  </p>
+                </div>
+              </Tab>
+            </Tabs>
+          </div>
+
+          <!-- Technical Differences -->
+          <div class="mb-12">
+            <h2 class="mb-6">Technical Implementation Differences</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="rounded-lg border-2 border-border dark:border-darkmode-border p-6">
+                <h3 class="font-bold mb-4 text-lg">SEO Implementation</h3>
+                <ul class="space-y-2 text-sm">
+                  <li>• Keyword research & targeting</li>
+                  <li>• Meta tags optimization</li>
+                  <li>• URL structure</li>
+                  <li>• Internal linking</li>
+                  <li>• Backlink acquisition</li>
+                  <li>• Page speed optimization</li>
+                  <li>• Mobile responsiveness</li>
+                  <li>• XML sitemaps</li>
+                  <li>• Robots.txt configuration</li>
+                </ul>
+              </div>
+              <div class="rounded-lg border-2 border-border dark:border-darkmode-border p-6">
+                <h3 class="font-bold mb-4 text-lg">AEO Implementation</h3>
+                <ul class="space-y-2 text-sm">
+                  <li>• Schema markup (FAQ, HowTo)</li>
+                  <li>• Question-answer format</li>
+                  <li>• Structured data testing</li>
+                  <li>• Concise answer paragraphs</li>
+                  <li>• List and table formats</li>
+                  <li>• Clear headings (H2, H3)</li>
+                  <li>• Natural language queries</li>
+                  <li>• Featured snippet targeting</li>
+                  <li>• Rich snippets optimization</li>
+                </ul>
+              </div>
+              <div class="rounded-lg border-2 border-primary bg-theme-light dark:bg-darkmode-theme-light p-6">
+                <h3 class="font-bold mb-4 text-lg">LMO Implementation</h3>
+                <ul class="space-y-2 text-sm">
+                  <li>• Authority & expertise signals</li>
+                  <li>• Comprehensive topic coverage</li>
+                  <li>• Factual accuracy verification</li>
+                  <li>• Natural, conversational language</li>
+                  <li>• Detailed explanations</li>
+                  <li>• Attribution & citations</li>
+                  <li>• Up-to-date information</li>
+                  <li>• Clear, scannable structure</li>
+                  <li>• Helpful, actionable content</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Results Timeline -->
+          <div class="mb-12">
+            <h2 class="mb-6 text-center">Expected Results Timeline</h2>
+            <div class="space-y-4">
+              <div class="rounded-lg bg-theme-light dark:bg-darkmode-theme-light p-6">
+                <div class="flex items-center justify-between mb-2">
+                  <h3 class="font-bold">SEO Results Timeline</h3>
+                  <span class="text-sm text-primary font-semibold">3-6 months (minimum)</span>
+                </div>
+                <div class="bg-white dark:bg-darkmode-body rounded-lg p-4">
+                  <div class="space-y-2 text-sm">
+                    <div class="flex items-center">
+                      <span class="font-semibold w-24">Month 1-2:</span>
+                      <span class="text-text-light">Setup, content creation, initial indexing</span>
+                    </div>
+                    <div class="flex items-center">
+                      <span class="font-semibold w-24">Month 3-4:</span>
+                      <span class="text-text-light">Some keyword rankings appear, minimal traffic</span>
+                    </div>
+                    <div class="flex items-center">
+                      <span class="font-semibold w-24">Month 5-6:</span>
+                      <span class="text-text-light">Ranking improvements, traffic starts growing</span>
+                    </div>
+                    <div class="flex items-center">
+                      <span class="font-semibold w-24">Month 7+:</span>
+                      <span class="text-text-light">Sustained growth with ongoing optimization</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rounded-lg bg-theme-light dark:bg-darkmode-theme-light p-6">
+                <div class="flex items-center justify-between mb-2">
+                  <h3 class="font-bold">AEO Results Timeline</h3>
+                  <span class="text-sm text-primary font-semibold">1-3 months</span>
+                </div>
+                <div class="bg-white dark:bg-darkmode-body rounded-lg p-4">
+                  <div class="space-y-2 text-sm">
+                    <div class="flex items-center">
+                      <span class="font-semibold w-24">Week 1-2:</span>
+                      <span class="text-text-light">Implement schema markup, optimize answer format</span>
+                    </div>
+                    <div class="flex items-center">
+                      <span class="font-semibold w-24">Week 3-6:</span>
+                      <span class="text-text-light">First featured snippets may appear</span>
+                    </div>
+                    <div class="flex items-center">
+                      <span class="font-semibold w-24">Month 2-3:</span>
+                      <span class="text-text-light">Multiple snippets, increased visibility</span>
+                    </div>
+                    <div class="flex items-center">
+                      <span class="font-semibold w-24">Ongoing:</span>
+                      <span class="text-text-light">Maintain and expand featured snippet coverage</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rounded-lg border-2 border-primary bg-primary/5 dark:bg-primary/10 p-6">
+                <div class="flex items-center justify-between mb-2">
+                  <h3 class="font-bold">LMO Results Timeline</h3>
+                  <span class="text-sm text-primary font-semibold">2-8 weeks</span>
+                </div>
+                <div class="bg-white dark:bg-darkmode-body rounded-lg p-4">
+                  <div class="space-y-2 text-sm">
+                    <div class="flex items-center">
+                      <span class="font-semibold w-24">Week 1-2:</span>
+                      <span class="text-text-light">Content optimization, authority signals implementation</span>
+                    </div>
+                    <div class="flex items-center">
+                      <span class="font-semibold w-24">Week 3-4:</span>
+                      <span class="text-text-light">First citations appear in AI responses</span>
+                    </div>
+                    <div class="flex items-center">
+                      <span class="font-semibold w-24">Week 5-8:</span>
+                      <span class="text-text-light">Citation frequency increases across multiple LLMs</span>
+                    </div>
+                    <div class="flex items-center">
+                      <span class="font-semibold w-24">Ongoing:</span>
+                      <span class="text-text-light">Compounding effect—early citations reinforce authority</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cost Comparison -->
+          <div class="mb-12">
+            <h2 class="mb-6 text-center">Investment Required (Cost Comparison)</h2>
+            <div class="overflow-x-auto">
+              <table class="w-full">
+                <thead class="bg-theme-light dark:bg-darkmode-theme-light">
+                  <tr>
+                    <th class="p-4 text-left">Activity</th>
+                    <th class="p-4 text-left">SEO Cost</th>
+                    <th class="p-4 text-left">AEO Cost</th>
+                    <th class="p-4 text-left">LMO Cost</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white dark:bg-darkmode-body">
+                  <tr class="border-t border-border dark:border-darkmode-border">
+                    <td class="p-4 font-semibold">Content Creation</td>
+                    <td class="p-4">£500-2,000/month</td>
+                    <td class="p-4">£300-1,000/month</td>
+                    <td class="p-4 text-green-600 font-semibold">£200-800/month</td>
+                  </tr>
+                  <tr class="border-t border-border dark:border-darkmode-border">
+                    <td class="p-4 font-semibold">Link Building</td>
+                    <td class="p-4">£1,000-5,000/month</td>
+                    <td class="p-4">£0-500/month</td>
+                    <td class="p-4 text-green-600 font-semibold">£0 (not required)</td>
+                  </tr>
+                  <tr class="border-t border-border dark:border-darkmode-border">
+                    <td class="p-4 font-semibold">Technical Optimization</td>
+                    <td class="p-4">£500-2,000 (one-time)</td>
+                    <td class="p-4">£200-800 (one-time)</td>
+                    <td class="p-4 text-green-600 font-semibold">£100-400 (one-time)</td>
+                  </tr>
+                  <tr class="border-t border-border dark:border-darkmode-border">
+                    <td class="p-4 font-semibold">Tools & Software</td>
+                    <td class="p-4">£100-500/month</td>
+                    <td class="p-4">£50-200/month</td>
+                    <td class="p-4 text-green-600 font-semibold">£35-599/month (LMO King)</td>
+                  </tr>
+                  <tr class="border-t border-border dark:border-darkmode-border">
+                    <td class="p-4 font-semibold">Agency/Consultant</td>
+                    <td class="p-4">£1,500-10,000/month</td>
+                    <td class="p-4">£800-3,000/month</td>
+                    <td class="p-4 text-green-600 font-semibold">£500-2,500/month (or DIY)</td>
+                  </tr>
+                  <tr class="border-t-2 border-primary">
+                    <td class="p-4 font-bold">Total Monthly (DIY)</td>
+                    <td class="p-4 font-bold">£2,100-7,500</td>
+                    <td class="p-4 font-bold">£550-1,700</td>
+                    <td class="p-4 text-green-600 font-bold">£235-1,399</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="mt-4 text-sm text-text-light text-center">
+              *Costs vary based on industry competitiveness, content volume, and whether you hire an agency or do it yourself
+            </p>
+          </div>
+
+          <!-- The Integrated Approach -->
+          <div class="mb-12">
+            <div class="rounded-lg bg-gradient p-8 text-white">
+              <h2 class="mb-4">The Best Approach: Use All Three Strategically</h2>
+              <p class="text-lg mb-6 opacity-90">
+                Rather than choosing one over another, the most effective strategy combines all three based on
+                your goals and resources:
+              </p>
+              <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white/10 rounded-lg p-4">
+                  <h4 class="font-bold mb-2">Foundation: SEO</h4>
+                  <p class="text-sm opacity-90">
+                    Maintain strong SEO fundamentals for long-term organic traffic and domain authority
+                  </p>
+                </div>
+                <div class="bg-white/10 rounded-lg p-4">
+                  <h4 class="font-bold mb-2">Quick Wins: AEO</h4>
+                  <p class="text-sm opacity-90">
+                    Target featured snippets for high-intent queries where you can provide concise answers
+                  </p>
+                </div>
+                <div class="bg-white/20 rounded-lg p-4 border-2 border-white">
+                  <h4 class="font-bold mb-2">Priority: LMO</h4>
+                  <p class="text-sm opacity-90">
+                    Focus heavily on LMO while competition is low—this is where the biggest opportunity lies
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="text-center rounded-lg bg-theme-light dark:bg-darkmode-theme-light p-8">
+            <h2 class="mb-4">Ready to Start with LMO?</h2>
+            <p class="text-lg text-text-light mb-6">
+              LMO King makes it easy to optimize your content for AI language models. Start free—no credit card required.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+              <a href="/signup" class="btn btn-primary">
+                Start Free - 20 Generations
+              </a>
+              <a href="/pricing" class="btn btn-outline-primary">
+                View All Plans
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

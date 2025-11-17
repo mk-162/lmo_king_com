@@ -1,0 +1,67 @@
+---
+
+
+interface Props {
+  name: string;
+  price: string;
+  period?: string;
+  description: string;
+  features: string[];
+  cta: {
+    text: string;
+    url: string;
+  };
+  highlighted?: boolean;
+  badge?: string;
+  popular?: boolean;
+}
+
+const {
+  name,
+  price,
+  period = "/month",
+  description,
+  features,
+  cta,
+  highlighted = false,
+  badge,
+  popular = false
+} = Astro.props;
+---
+
+<div class={`rounded-lg p-8 text-center h-full flex flex-col relative ${
+  highlighted
+    ? 'border-2 border-primary bg-theme-light dark:bg-darkmode-theme-light'
+    : 'border-2 border-border dark:border-darkmode-border'
+}`}>
+  {popular && (
+    <div class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-sm font-semibold text-white whitespace-nowrap">
+      {badge || 'Most Popular'}
+    </div>
+  )}
+
+  <h3 class="mb-2 text-2xl font-bold">{name}</h3>
+
+  <div class="mb-4">
+    <span class="text-4xl font-bold">{price}</span>
+    {period && <span class="text-text-light">{period}</span>}
+  </div>
+
+  <p class="mb-6 text-text-light">{description}</p>
+
+  <ul class="mb-8 space-y-3 text-left flex-grow">
+    {features.map((feature) => (
+      <li class="flex items-start">
+        ✓
+        <span set:html={feature} />
+      </li>
+    ))}
+  </ul>
+
+  <a
+    href={cta.url}
+    class={`btn ${highlighted ? 'btn-primary' : 'btn-outline-primary'}`}
+  >
+    {cta.text}
+  </a>
+</div>

@@ -1,0 +1,466 @@
+---
+import Base from "@/layouts/Base.astro";
+import PageHeader from "@/layouts/partials/PageHeader.astro";
+import PricingCard from "@/layouts/components/PricingCard.astro";
+
+import Accordion from "@/layouts/shortcodes/Accordion";
+import Notice from "@/layouts/shortcodes/Notice";
+---
+
+<Base>
+  <PageHeader title="Simple, Transparent Pricing" />
+
+  <section class="section">
+    <div class="container">
+      <!-- Pricing Toggle (Monthly/Annual) - Can be added later -->
+      <div class="row justify-center mb-12">
+        <div class="md:col-10 lg:col-8 text-center">
+          <Notice client:load type="tip">
+            <p>
+              <strong>Save 20% with annual billing!</strong> All paid plans offer an annual option with
+              two months free. Contact us for annual pricing details.
+            </p>
+          </Notice>
+        </div>
+      </div>
+
+      <!-- Pricing Cards -->
+      <div class="row gy-4 mb-12">
+        <!-- Free Tier -->
+        <div class="md:col-6 lg:col-4 xl:col-2-4">
+          <PricingCard
+            name="Free"
+            price="£0"
+            period="/month"
+            description="Perfect for testing LMO"
+            features={[
+              "20 AI generations/month",
+              "1 project",
+              "1 user",
+              "Basic features only",
+              "Community support"
+            ]}
+            cta={{
+              text: "Start Free",
+              url: "/signup"
+            }}
+          />
+        </div>
+
+        <!-- Starter Tier -->
+        <div class="md:col-6 lg:col-4 xl:col-2-4">
+          <PricingCard
+            name="Starter"
+            price="£35"
+            period="/month"
+            description="For freelancers & small businesses"
+            features={[
+              "500 generations/month",
+              "3 projects",
+              "1 user",
+              "✅ Fact-checking",
+              "✅ Bulk operations (10 items)",
+              "Email support"
+            ]}
+            cta={{
+              text: "Start Free Trial",
+              url: "/signup?plan=starter"
+            }}
+          />
+        </div>
+
+        <!-- Professional Tier (Most Popular) -->
+        <div class="md:col-6 lg:col-4 xl:col-2-4">
+          <PricingCard
+            name="Professional"
+            price="£199"
+            period="/month"
+            description="For content teams & agencies"
+            features={[
+              "2,000 generations/month",
+              "10 projects",
+              "3 team members",
+              "✅ Advanced AI research",
+              "✅ Priority queue (2× faster)",
+              "✅ API access (read-only)",
+              "✅ Custom brand voice",
+              "Priority email support"
+            ]}
+            cta={{
+              text: "Start Free Trial",
+              url: "/signup?plan=professional"
+            }}
+            highlighted={true}
+            popular={true}
+            badge="Most Popular"
+          />
+        </div>
+
+        <!-- Business Tier -->
+        <div class="md:col-6 lg:col-4 xl:col-2-4">
+          <PricingCard
+            name="Business"
+            price="£599"
+            period="/month"
+            description="For agencies & enterprises"
+            features={[
+              "10,000 generations/month",
+              "50 projects",
+              "10 team members",
+              "✅ Full REST API",
+              "✅ Dedicated priority queue (3× faster)",
+              "✅ WordPress/CMS integrations",
+              "✅ Phone support",
+              "✅ Dedicated account manager"
+            ]}
+            cta={{
+              text: "Book Demo",
+              url: "/contact?plan=business"
+            }}
+          />
+        </div>
+
+        <!-- Enterprise Tier -->
+        <div class="md:col-6 lg:col-4 xl:col-2-4">
+          <PricingCard
+            name="Enterprise"
+            price="Custom"
+            period=""
+            description="For large organizations"
+            features={[
+              "Unlimited generations",
+              "Unlimited projects",
+              "Unlimited team members",
+              "✅ Dedicated account manager",
+              "✅ Custom integrations",
+              "✅ SLA guarantees",
+              "✅ White-label options",
+              "✅ On-premises deployment",
+              "24/7 priority support"
+            ]}
+            cta={{
+              text: "Contact Sales",
+              url: "/contact?plan=enterprise"
+            }}
+          />
+        </div>
+      </div>
+
+      <!-- Feature Comparison Table -->
+      <div class="row justify-center mb-12">
+        <div class="md:col-12">
+          <h2 class="mb-6 text-center">Detailed Feature Comparison</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse">
+              <thead class="bg-gradient text-white">
+                <tr>
+                  <th class="p-4 text-left border border-white/20">Feature</th>
+                  <th class="p-4 text-center border border-white/20">Free</th>
+                  <th class="p-4 text-center border border-white/20">Starter<br/><span class="text-sm font-normal">£35/mo</span></th>
+                  <th class="p-4 text-center border border-white/20 bg-primary">Professional<br/><span class="text-sm font-normal">£199/mo</span></th>
+                  <th class="p-4 text-center border border-white/20">Business<br/><span class="text-sm font-normal">£599/mo</span></th>
+                  <th class="p-4 text-center border border-white/20">Enterprise<br/><span class="text-sm font-normal">Custom</span></th>
+                </tr>
+              </thead>
+              <tbody class="bg-white dark:bg-darkmode-body">
+                <!-- Generation Limits -->
+                <tr class="border-t border-border dark:border-darkmode-border">
+                  <td class="p-4 font-semibold">AI Generations/Month</td>
+                  <td class="p-4 text-center">20</td>
+                  <td class="p-4 text-center">500</td>
+                  <td class="p-4 text-center bg-theme-light dark:bg-darkmode-theme-light">2,000</td>
+                  <td class="p-4 text-center">10,000</td>
+                  <td class="p-4 text-center">Unlimited</td>
+                </tr>
+                <tr class="border-t border-border dark:border-darkmode-border">
+                  <td class="p-4 font-semibold">Projects</td>
+                  <td class="p-4 text-center">1</td>
+                  <td class="p-4 text-center">3</td>
+                  <td class="p-4 text-center bg-theme-light dark:bg-darkmode-theme-light">10</td>
+                  <td class="p-4 text-center">50</td>
+                  <td class="p-4 text-center">Unlimited</td>
+                </tr>
+                <tr class="border-t border-border dark:border-darkmode-border">
+                  <td class="p-4 font-semibold">Team Members</td>
+                  <td class="p-4 text-center">1</td>
+                  <td class="p-4 text-center">1</td>
+                  <td class="p-4 text-center bg-theme-light dark:bg-darkmode-theme-light">3</td>
+                  <td class="p-4 text-center">10</td>
+                  <td class="p-4 text-center">Unlimited</td>
+                </tr>
+
+                <!-- Core Features -->
+                <tr class="border-t-2 border-primary">
+                  <td class="p-4 font-bold" colspan="6">Core Features</td>
+                </tr>
+                <tr class="border-t border-border dark:border-darkmode-border">
+                  <td class="p-4">Content Optimization</td>
+                  <td class="p-4 text-center">✓</td>
+                  <td class="p-4 text-center">✓</td>
+                  <td class="p-4 text-center bg-theme-light dark:bg-darkmode-theme-light">✓</td>
+                  <td class="p-4 text-center">✓</td>
+                  <td class="p-4 text-center">✓</td>
+                </tr>
+                <tr class="border-t border-border dark:border-darkmode-border">
+                  <td class="p-4">LMO Score & Analysis</td>
+                  <td class="p-4 text-center">✓</td>
+                  <td class="p-4 text-center">✓</td>
+                  <td class="p-4 text-center bg-theme-light dark:bg-darkmode-theme-light">✓</td>
+                  <td class="p-4 text-center">✓</td>
+                  <td class="p-4 text-center">✓</td>
+                </tr>
+                <tr class="border-t border-border dark:border-darkmode-border">
+                  <td class="p-4">Multi-LLM Testing</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center">✓</td>
+                  <td class="p-4 text-center bg-theme-light dark:bg-darkmode-theme-light">✓</td>
+                  <td class="p-4 text-center">✓</td>
+                  <td class="p-4 text-center">✓</td>
+                </tr>
+                <tr class="border-t border-border dark:border-darkmode-border">
+                  <td class="p-4">Fact-checking</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center">✓</td>
+                  <td class="p-4 text-center bg-theme-light dark:bg-darkmode-theme-light">✓</td>
+                  <td class="p-4 text-center">✓</td>
+                  <td class="p-4 text-center">✓</td>
+                </tr>
+                <tr class="border-t border-border dark:border-darkmode-border">
+                  <td class="p-4">Bulk Operations</td>
+                  <td class="p-4 text-center text-sm text-text-light">-</td>
+                  <td class="p-4 text-center text-sm">10 items</td>
+                  <td class="p-4 text-center text-sm bg-theme-light dark:bg-darkmode-theme-light">50 items</td>
+                  <td class="p-4 text-center text-sm">200 items</td>
+                  <td class="p-4 text-center text-sm">Unlimited</td>
+                </tr>
+
+                <!-- Advanced Features -->
+                <tr class="border-t-2 border-primary">
+                  <td class="p-4 font-bold" colspan="6">Advanced Features</td>
+                </tr>
+                <tr class="border-t border-border dark:border-darkmode-border">
+                  <td class="p-4">Advanced AI Research</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center bg-theme-light dark:bg-darkmode-theme-light">✓</td>
+                  <td class="p-4 text-center">✓</td>
+                  <td class="p-4 text-center">✓</td>
+                </tr>
+                <tr class="border-t border-border dark:border-darkmode-border">
+                  <td class="p-4">Custom Brand Voice</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center bg-theme-light dark:bg-darkmode-theme-light">✓</td>
+                  <td class="p-4 text-center">✓</td>
+                  <td class="p-4 text-center">✓</td>
+                </tr>
+                <tr class="border-t border-border dark:border-darkmode-border">
+                  <td class="p-4">Processing Speed</td>
+                  <td class="p-4 text-center text-sm">Standard</td>
+                  <td class="p-4 text-center text-sm">Standard</td>
+                  <td class="p-4 text-center text-sm bg-theme-light dark:bg-darkmode-theme-light">2× Priority</td>
+                  <td class="p-4 text-center text-sm">3× Dedicated</td>
+                  <td class="p-4 text-center text-sm">Dedicated</td>
+                </tr>
+
+                <!-- API & Integrations -->
+                <tr class="border-t-2 border-primary">
+                  <td class="p-4 font-bold" colspan="6">API & Integrations</td>
+                </tr>
+                <tr class="border-t border-border dark:border-darkmode-border">
+                  <td class="p-4">API Access</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center text-sm bg-theme-light dark:bg-darkmode-theme-light">Read-only</td>
+                  <td class="p-4 text-center text-sm">Full REST API</td>
+                  <td class="p-4 text-center text-sm">Full + Custom</td>
+                </tr>
+                <tr class="border-t border-border dark:border-darkmode-border">
+                  <td class="p-4">WordPress/CMS Integrations</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center bg-theme-light dark:bg-darkmode-theme-light">✗</td>
+                  <td class="p-4 text-center">✓</td>
+                  <td class="p-4 text-center">✓</td>
+                </tr>
+                <tr class="border-t border-border dark:border-darkmode-border">
+                  <td class="p-4">Export Formats</td>
+                  <td class="p-4 text-center text-sm">Basic</td>
+                  <td class="p-4 text-center text-sm">All</td>
+                  <td class="p-4 text-center text-sm bg-theme-light dark:bg-darkmode-theme-light">All</td>
+                  <td class="p-4 text-center text-sm">All + Custom</td>
+                  <td class="p-4 text-center text-sm">All + Custom</td>
+                </tr>
+
+                <!-- Support & SLA -->
+                <tr class="border-t-2 border-primary">
+                  <td class="p-4 font-bold" colspan="6">Support & SLA</td>
+                </tr>
+                <tr class="border-t border-border dark:border-darkmode-border">
+                  <td class="p-4">Support</td>
+                  <td class="p-4 text-center text-sm">Community</td>
+                  <td class="p-4 text-center text-sm">Email</td>
+                  <td class="p-4 text-center text-sm bg-theme-light dark:bg-darkmode-theme-light">Priority Email</td>
+                  <td class="p-4 text-center text-sm">Phone + Email</td>
+                  <td class="p-4 text-center text-sm">24/7 Priority</td>
+                </tr>
+                <tr class="border-t border-border dark:border-darkmode-border">
+                  <td class="p-4">Dedicated Account Manager</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center bg-theme-light dark:bg-darkmode-theme-light">✗</td>
+                  <td class="p-4 text-center">✓</td>
+                  <td class="p-4 text-center">✓</td>
+                </tr>
+                <tr class="border-t border-border dark:border-darkmode-border">
+                  <td class="p-4">SLA Guarantee</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center bg-theme-light dark:bg-darkmode-theme-light">✗</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center">✓</td>
+                </tr>
+
+                <!-- Enterprise Features -->
+                <tr class="border-t-2 border-primary">
+                  <td class="p-4 font-bold" colspan="6">Enterprise Features</td>
+                </tr>
+                <tr class="border-t border-border dark:border-darkmode-border">
+                  <td class="p-4">White-label Options</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center bg-theme-light dark:bg-darkmode-theme-light">✗</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center">✓</td>
+                </tr>
+                <tr class="border-t border-border dark:border-darkmode-border">
+                  <td class="p-4">On-premises Deployment</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center bg-theme-light dark:bg-darkmode-theme-light">✗</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center">✓</td>
+                </tr>
+                <tr class="border-t border-border dark:border-darkmode-border">
+                  <td class="p-4">Custom Integrations</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center bg-theme-light dark:bg-darkmode-theme-light">✗</td>
+                  <td class="p-4 text-center">✗</td>
+                  <td class="p-4 text-center">✓</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="row justify-center mb-12">
+        <div class="md:col-10 lg:col-8">
+          <h2 class="mb-6 text-center">Pricing FAQ</h2>
+          <div class="space-y-4">
+            <Accordion client:load title="Do I need a credit card for the free tier?">
+              <p>
+                No! The Free tier requires no credit card. Simply sign up with your email and start optimizing
+                your content for LLMs immediately. You get 20 generations per month with no commitment.
+              </p>
+            </Accordion>
+
+            <Accordion client:load title="What happens if I exceed my generation limit?">
+              <p class="mb-3">
+                If you reach your monthly generation limit, you have three options:
+              </p>
+              <ul class="list-disc pl-6 space-y-1">
+                <li>Wait until your limit resets at the start of the next billing cycle</li>
+                <li>Purchase additional generation credits (available on Starter and above)</li>
+                <li>Upgrade to a higher tier for more generations</li>
+              </ul>
+              <p class="mt-3">
+                We'll notify you when you're approaching your limit so you're never caught off guard.
+              </p>
+            </Accordion>
+
+            <Accordion client:load title="Can I change plans at any time?">
+              <p>
+                Yes! You can upgrade or downgrade your plan at any time. Upgrades take effect immediately, and
+                you'll be credited for any unused time on your previous plan. Downgrades take effect at the
+                start of your next billing cycle.
+              </p>
+            </Accordion>
+
+            <Accordion client:load title="What's your refund policy?">
+              <p>
+                We offer a 14-day money-back guarantee on all paid plans. If you're not satisfied for any reason
+                within the first 14 days, contact us for a full refund. After 14 days, we prorate refunds based
+                on unused time for annual plans.
+              </p>
+            </Accordion>
+
+            <Accordion client:load title="Do you offer annual billing?">
+              <p class="mb-3">
+                Yes! Annual billing is available on all paid plans and saves you 20% (equivalent to 2 months free).
+                Here's the annual pricing:
+              </p>
+              <ul class="list-disc pl-6 space-y-1">
+                <li><strong>Starter:</strong> £336/year (save £84)</li>
+                <li><strong>Professional:</strong> £1,910/year (save £478)</li>
+                <li><strong>Business:</strong> £5,750/year (save £1,438)</li>
+              </ul>
+            </Accordion>
+
+            <Accordion client:load title="What counts as a 'generation'?">
+              <p>
+                A generation is a single AI-powered optimization operation. This could be optimizing a blog post,
+                generating LMO-optimized content, analyzing a URL, or testing how your content appears in AI responses.
+                Most users find that one article or piece of content requires 2-5 generations for full optimization.
+              </p>
+            </Accordion>
+
+            <Accordion client:load title="Can I add more team members?">
+              <p>
+                Yes! You can add additional team members beyond your plan's included seats. Extra seats cost:
+              </p>
+              <ul class="list-disc pl-6 mt-2 space-y-1">
+                <li><strong>Professional:</strong> £25/user/month</li>
+                <li><strong>Business:</strong> £20/user/month</li>
+                <li><strong>Enterprise:</strong> Custom pricing based on volume</li>
+              </ul>
+            </Accordion>
+
+            <Accordion client:load title="Is there a setup fee?">
+              <p>
+                No setup fees for Free, Starter, and Professional plans. Business plans include complimentary onboarding.
+                Enterprise plans may include a one-time setup fee depending on custom integration requirements, but this
+                is discussed during the sales process.
+              </p>
+            </Accordion>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="row justify-center">
+        <div class="md:col-10 lg:col-8">
+          <div class="rounded-lg bg-gradient p-8 text-center text-white">
+            <h2 class="mb-4">Ready to Get Started?</h2>
+            <p class="text-lg mb-6 opacity-90">
+              Join hundreds of businesses already optimizing for AI discovery. Start free—no credit card required.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+              <a href="/signup" class="btn btn-primary bg-white text-primary hover:bg-white/90">
+                Start Free - 20 Generations
+              </a>
+              <a href="/contact" class="btn btn-outline-primary border-white text-white hover:bg-white hover:text-primary">
+                Contact Sales
+              </a>
+            </div>
+            <p class="mt-6 text-sm opacity-80">
+              14-day money-back guarantee on all paid plans • No long-term contracts • Cancel anytime
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

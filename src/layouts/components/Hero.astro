@@ -1,0 +1,78 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  primaryCTA?: {
+    text: string;
+    url: string;
+  };
+  secondaryCTA?: {
+    text: string;
+    url: string;
+  };
+  image?: string;
+  centered?: boolean;
+}
+
+const {
+  title,
+  subtitle,
+  description,
+  primaryCTA,
+  secondaryCTA,
+  image,
+  centered = false
+} = Astro.props;
+---
+
+<section class="section pt-14">
+  <div class="container">
+    <div class={`row ${centered ? 'justify-center text-center' : 'items-center'}`}>
+      <div class={`${image ? 'mb-8 md:col-6 lg:mb-0' : 'md:col-10 lg:col-8'} ${centered && 'mx-auto'}`}>
+        {subtitle && (
+          <p class="mb-4 text-sm font-semibold uppercase tracking-wider text-primary">
+            {subtitle}
+          </p>
+        )}
+        <h1
+          class="mb-6 text-h1-sm font-bold leading-tight md:text-h1"
+          set:html={title}
+        />
+        {description && (
+          <p class="mb-8 text-lg text-text-light md:text-xl">
+            {description}
+          </p>
+        )}
+        <div class={`flex flex-wrap gap-4 ${centered && 'justify-center'}`}>
+          {primaryCTA && (
+            <a
+              href={primaryCTA.url}
+              class="btn btn-primary"
+            >
+              {primaryCTA.text}
+            </a>
+          )}
+          {secondaryCTA && (
+            <a
+              href={secondaryCTA.url}
+              class="btn btn-outline-primary"
+            >
+              {secondaryCTA.text}
+            </a>
+          )}
+        </div>
+      </div>
+      {image && (
+        <div class="md:col-6">
+          <img
+            src={image}
+            alt={title}
+            class="mx-auto w-full rounded-lg"
+            loading="eager"
+          />
+        </div>
+      )}
+    </div>
+  </div>
+</section>
