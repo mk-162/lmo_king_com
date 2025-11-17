@@ -1,0 +1,28 @@
+<svg width="180" height="50" viewBox="0 0 180 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- LMO King Logo - Horizontal Version -->
+  <defs>
+    <linearGradient id="lmo-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0099FF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#9933FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF3399;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Crown Icon -->
+  <g transform="translate(5, 10)">
+    <path d="M15 5 L20 15 L15 12 L10 15 L15 5 Z" fill="url(#lmo-gradient)"/>
+    <path d="M5 15 L10 25 L10 22 L5 22 L5 15 Z" fill="url(#lmo-gradient)"/>
+    <path d="M25 15 L20 25 L20 22 L25 22 L25 15 Z" fill="url(#lmo-gradient)"/>
+    <rect x="5" y="25" width="20" height="3" fill="url(#lmo-gradient)"/>
+  </g>
+
+  <!-- LMO Text -->
+  <text x="40" y="25" font-family="Arial, sans-serif" font-weight="bold" font-size="20" fill="#1a1a2e">
+    LMO
+  </text>
+
+  <!-- King Text -->
+  <text x="40" y="38" font-family="Arial, sans-serif" font-weight="600" font-size="14" fill="url(#lmo-gradient)">
+    King
+  </text>
+</svg>
