@@ -1,57 +1,108 @@
 {
   "main": [
     {
-      "name": "Home",
-      "url": "/"
+      "name": "What is LMO?",
+      "url": "/what-is-lmo"
+    },
+    {
+      "name": "Solutions",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Platform",
+          "url": "/platform"
+        },
+        {
+          "name": "Use Cases",
+          "url": "/solutions"
+        },
+        {
+          "name": "White Label",
+          "url": "/white-label"
+        }
+      ]
+    },
+    {
+      "name": "Resources",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Blog",
+          "url": "/blog"
+        },
+        {
+          "name": "Knowledge Base",
+          "url": "/knowledge-base"
+        },
+        {
+          "name": "LMO vs AEO vs SEO",
+          "url": "/lmo-vs-aeo-vs-seo"
+        },
+        {
+          "name": "How LMO Works",
+          "url": "/how-lmo-works"
+        },
+        {
+          "name": "Why LMO Matters Now",
+          "url": "/why-lmo-matters-now"
+        }
+      ]
+    },
+    {
+      "name": "Pricing",
+      "url": "/pricing"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
+    }
+  ],
+  "footer": [
+    {
+      "name": "What is LMO?",
+      "url": "/what-is-lmo"
+    },
+    {
+      "name": "Platform",
+      "url": "/platform"
+    },
+    {
+      "name": "Pricing",
+      "url": "/pricing"
+    },
+    {
+      "name": "Blog",
+      "url": "/blog"
+    },
+    {
+      "name": "Knowledge Base",
+      "url": "/knowledge-base"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
     },
     {
       "name": "About",
       "url": "/about"
     },
     {
-      "name": "Elements",
-      "url": "/elements"
+      "name": "White Label",
+      "url": "/white-label"
     },
     {
-      "name": "Pages",
-      "url": "",
-      "hasChildren": true,
-      "children": [
-        {
-          "name": "Contact",
-          "url": "/contact"
-        },
-        {
-          "name": "Blog",
-          "url": "/blog"
-        },
-        {
-          "name": "Authors",
-          "url": "/authors"
-        },
-        {
-          "name": "Categories",
-          "url": "/categories"
-        },
-        {
-          "name": "Tags",
-          "url": "/tags"
-        },
-        {
-          "name": "404 Page",
-          "url": "/404"
-        }
-      ]
-    }
-  ],
-  "footer": [
-    {
-      "name": "Elements",
-      "url": "/elements"
+      "name": "Support",
+      "url": "/support"
     },
     {
       "name": "Privacy Policy",
       "url": "/privacy-policy"
+    },
+    {
+      "name": "Terms of Service",
+      "url": "/terms-of-service"
     }
   ]
 }

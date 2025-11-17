@@ -1,42 +1,42 @@
 {
   "site": {
-    "title": "Astroplate",
-    "base_url": "https://astroplate.netlify.app",
+    "title": "LMO King",
+    "base_url": "https://www.lmoking.com",
     "base_path": "/",
     "trailing_slash": false,
-    "favicon": "/images/favicon.png",
-    "logo": "/images/logo.png",
-    "logo_darkmode": "/images/logo-darkmode.png",
+    "favicon": "/assets/favicon.png",
+    "logo": "/assets/LMO_King_Logo.svg",
+    "logo_darkmode": "/assets/LMO_King_Logo.svg",
     "logo_width": "150",
-    "logo_height": "30",
-    "logo_text": "Astroplate"
+    "logo_height": "40",
+    "logo_text": "LMO King"
   },
 
   "settings": {
     "search": true,
     "sticky_header": true,
-    "theme_switcher": true,
-    "default_theme": "system",
-    "pagination": 2,
+    "theme_switcher": false,
+    "default_theme": "light",
+    "pagination": 9,
     "summary_length": 200,
     "blog_folder": "blog"
   },
 
   "announcement": {
     "enable": true,
-    "content": "<span class='text-center block'>♥️ Loving Astroplate? <a class='underline' href='https://github.com/zeon-studio/astroplate' target='_blank' rel='noopener'>Please ⭐️ on Github</a></span>",
-    "expire_days": 7
+    "content": "<span class='text-center block'>🚀 Win the LLM Land Grab - <a class='underline font-semibold' href='/pricing'>Start Free - 20 Generations</a></span>",
+    "expire_days": 30
   },
 
   "params": {
     "contact_form_action": "#",
-    "copyright": "Designed And Developed by [Zeon Studio](https://zeon.studio)"
+    "copyright": "© 2025 LMO King. All rights reserved."
   },
 
   "navigation_button": {
     "enable": true,
-    "label": "Get Started",
-    "link": "https://github.com/zeon-studio/astroplate"
+    "label": "Start Free Trial",
+    "link": "/signup"
   },
 
   "google_tag_manager": {
@@ -45,14 +45,14 @@
   },
 
   "disqus": {
-    "enable": true,
-    "shortname": "themefisher-template",
+    "enable": false,
+    "shortname": "",
     "settings": {}
   },
 
   "metadata": {
-    "meta_author": "zeon.studio",
-    "meta_image": "/images/og-image.png",
-    "meta_description": "astro and tailwind boilerplate"
+    "meta_author": "LMO King",
+    "meta_image": "/assets/og-image.png",
+    "meta_description": "LMO King - Language Model Optimization platform for businesses. Optimize your content for AI discovery and ensure your brand appears in ChatGPT, Claude, and Perplexity responses."
   }
 }
